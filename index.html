@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 AZ First Response | CPR · AED · First Aid Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0c2147;
+    --navy-mid: #0f2d5e;
+    --navy-light: #1a3a70;
+    --gold: #c9a84c;
+    --gold-light: #e0c070;
+    --gold-pale: #f5edd8;
+    --white: #ffffff;
+    --off-white: #f8f7f4;
+    --gray: #5a6a82;
+    --gray-light: #e8ecf2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 70px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--white);
+    line-height: 1.1;
+  }
+
+  .nav-logo-sub {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.62rem;
+    color: var(--gold);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 70px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.07) 0%, transparent 50%);
+  }
+
+  /* Cross pattern background */
+  .hero-cross-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 48px, rgba(201,168,76,1) 48px, rgba(201,168,76,1) 52px),
+      repeating-linear-gradient(90deg, transparent, transparent 48px, rgba(201,168,76,1) 48px, rgba(201,168,76,1) 52px);
+  }
+
+  .hero-cross-big {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    height: 320px;
+    opacity: 0.07;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    animation: fadeInUp 0.6s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    animation: fadeInUp 0.6s 0.1s ease both;
+  }
+
+  .hero-title span {
+    color: var(--gold);
+  }
+
+  .hero-tagline {
+    margin-top: 20px;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    animation: fadeInUp 0.6s 0.2s ease both;
+  }
+
+  .hero-tagline strong {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .hero-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s 0.3s ease both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: 4px;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* Hero card panel */
+  .hero-card-panel {
+    animation: fadeInUp 0.6s 0.2s ease both;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 12px;
+    padding: 36px;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .course-item {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .course-item:last-child { border-bottom: none; }
+
+  .course-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .course-details {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 10px;
+    display: flex;
+    gap: 16px;
+  }
+
+  .course-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .course-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .course-note {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 2px;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--gold);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--navy);
+    letter-spacing: 0.3px;
+  }
+
+  .trust-icon {
+    font-size: 1.2rem;
+  }
+
+  /* ── SECTION SHARED ── */
+  .section {
+    padding: 90px 40px;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 3vw, 2.8rem);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+
+  /* ── COURSES SECTION ── */
+  .courses-section {
+    background: var(--off-white);
+  }
+
+  .courses-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .course-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(12,33,71,0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+  }
+
+  .course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(12,33,71,0.14);
+  }
+
+  .course-card-header {
+    background: var(--navy);
+    padding: 28px 30px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .course-card-header::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.1);
+  }
+
+  .course-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--gold);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+  }
+
+  .course-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .course-card-sub {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.5px;
+  }
+
+  .course-card-body {
+    padding: 28px 30px;
+  }
+
+  .course-card-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--navy);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .course-card-price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--gray);
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .course-card-note {
+    font-size: 0.82rem;
+    color: var(--gray);
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .course-features {
+    list-style: none;
+    margin-bottom: 24px;
+  }
+
+  .course-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.92rem;
+    color: #3a4a5e;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .course-features li:last-child { border-bottom: none; }
+
+  .check {
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .course-card .btn-primary {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+
+  /* flexible option callout */
+  .flexible-note {
+    margin-top: 24px;
+    background: var(--navy);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .flexible-note-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── WHY US ── */
+  .why-grid {
+    margin-top: 52px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+  }
+
+  .why-item {
+    text-align: center;
+    padding: 32px 20px;
+    border-radius: 10px;
+    background: var(--off-white);
+    transition: background 0.2s;
+  }
+
+  .why-item:hover { background: var(--gold-pale); }
+
+  .why-icon {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .why-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .why-text {
+    font-size: 0.88rem;
+    color: var(--gray);
+    line-height: 1.65;
+  }
+
+  /* ── ABOUT / MISSION ── */
+  .about-section {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .about-section .section-title {
+    color: var(--white);
+  }
+
+  .about-section .section-subtitle {
+    color: rgba(255,255,255,0.65);
+    max-width: 700px;
+  }
+
+  .about-section .section-label {
+    color: var(--gold);
+  }
+
+  .mission-quote {
+    margin-top: 40px;
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 0 8px 8px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .values-row {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .value-chip {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: background 0.2s;
+  }
+
+  .value-chip:hover { background: rgba(201,168,76,0.1); }
+
+  .value-chip-icon { font-size: 1.6rem; margin-bottom: 8px; display: block; }
+
+  .value-chip-title {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--gold);
+    letter-spacing: 0.4px;
+  }
+
+  /* ── CONTACT / CTA ── */
+  .contact-section {
+    background: var(--off-white);
+  }
+
+  .contact-layout {
+    margin-top: 52px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 52px;
+    align-items: start;
+  }
+
+  .contact-info-card {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 44px;
+    color: var(--white);
+  }
+
+  .contact-info-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+
+  .contact-info-card p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .contact-phone {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+
+  .phone-icon-wrap {
+    width: 52px;
+    height: 52px;
+    background: var(--gold);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .contact-phone:hover .phone-icon-wrap { background: var(--gold-light); }
+
+  .phone-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    display: block;
+    line-height: 1;
+  }
+
+  .phone-sub {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 28px 0;
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 12px;
+  }
+
+  .contact-detail-icon { color: var(--gold); font-size: 1.1rem; }
+
+  /* Register panel */
+  .register-panel {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 44px;
+    border: 1px solid var(--gray-light);
+  }
+
+  .register-panel h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .register-panel p {
+    font-size: 0.92rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .register-steps {
+    list-style: none;
+    margin-bottom: 28px;
+  }
+
+  .register-steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 18px;
+    font-size: 0.92rem;
+    color: #3a4a5e;
+    line-height: 1.5;
+  }
+
+  .step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #07152e;
+    color: rgba(255,255,255,0.5);
+    padding: 40px;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+
+  footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  footer .footer-tagline {
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  footer .footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: color 0.2s;
+  }
+
+  footer .footer-links a:hover { color: var(--gold); }
+
+  footer .footer-copy {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero-content { grid-template-columns: 1fr; gap: 40px; padding: 50px 20px; }
+    .hero-card-panel { order: -1; }
+    .trust-bar { gap: 24px; padding: 18px 20px; }
+    .section { padding: 64px 20px; }
+    .contact-layout { grid-template-columns: 1fr; gap: 28px; }
+    .contact-info-card, .register-panel { padding: 28px; }
+    .hero-cross-big { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+      <rect width="58" height="58" rx="8" fill="#c9a84c"/>
+      <rect x="20" y="12" width="18" height="34" rx="3" fill="#0c2147"/>
+      <rect x="10" y="22" width="38" height="14" rx="3" fill="#0c2147"/>
+      <rect x="23" y="15" width="12" height="28" rx="2" fill="#c9a84c"/>
+      <rect x="13" y="25" width="32" height="8" rx="2" fill="#c9a84c"/>
+    </svg>
+    <div>
+      <span class="nav-logo-text">1 AZ First Response</span>
+      <span class="nav-logo-sub">CPR · AED · First Aid</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Register Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-cross-pattern"></div>
+
+  <!-- large faint cross -->
+  <svg class="hero-cross-big" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <rect x="110" y="0" width="100" height="320" rx="20" fill="#c9a84c"/>
+    <rect x="0" y="110" width="320" height="100" rx="20" fill="#c9a84c"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span>⚕</span> Arizona CPR & First Aid Training
+      </div>
+      <h1 class="hero-title">
+        When Seconds Count,<br><span>Skills Save Lives</span>
+      </h1>
+      <p class="hero-tagline">
+        Professional CPR, AED, and First Aid training taught by <strong>trained and experienced instructors</strong> — available to individuals, families, and workplaces throughout Arizona.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">📞 Call to Register</a>
+        <a href="#courses" class="btn-outline">View Courses →</a>
+      </div>
+    </div>
+
+    <div class="hero-card-panel">
+      <div class="hero-card">
+        <h3>📋 Upcoming Classes</h3>
+
+        <div class="course-item">
+          <div class="course-title">First Aid / CPR Combined</div>
+          <div class="course-details">
+            <span class="course-detail-item">⏱ 8 Hours</span>
+            <span class="course-detail-item">📍 Arizona</span>
+          </div>
+          <div class="course-price">$100</div>
+          <div class="course-note">Can split into two 4-hour sessions — call us</div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-title">CPR / AED Only</div>
+          <div class="course-details">
+            <span class="course-detail-item">⏱ 4 Hours</span>
+            <span class="course-detail-item">📍 Arizona</span>
+          </div>
+          <div class="course-price">$50</div>
+          <div class="course-note">Adult, Child & Infant CPR + AED use</div>
+        </div>
+
+        <a href="tel:6028921962" class="btn-primary" style="width:100%; justify-content:center; margin-top:20px;">
+          📞 602-892-1962
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">🏅</span> Trained & Experienced Instructors</div>
+  <div class="trust-item"><span class="trust-icon">❤️</span> Adult, Child & Infant CPR</div>
+  <div class="trust-item"><span class="trust-icon">⚡</span> AED Training Included</div>
+  <div class="trust-item"><span class="trust-icon">🩹</span> First Aid Certification</div>
+  <div class="trust-item"><span class="trust-icon">📅</span> Flexible Scheduling</div>
+</div>
+
+<!-- COURSES -->
+<section class="section courses-section" id="courses">
+  <div class="section-inner">
+    <div class="section-label">Our Courses</div>
+    <h2 class="section-title">Life-Saving Skills<br>At a Fair Price</h2>
+    <p class="section-subtitle">Every class is taught by trained, experienced instructors who bring real-world knowledge and genuine care to every session.</p>
+
+    <div class="courses-grid">
+
+      <!-- Card 1: CPR/AED -->
+      <div class="course-card">
+        <div class="course-card-header">
+          <div class="course-icon">⚡</div>
+          <div class="course-card-title">CPR / AED</div>
+          <div class="course-card-sub">CORE LIFE SAFETY SKILLS</div>
+        </div>
+        <div class="course-card-body">
+          <div class="course-card-price">$50 <span>/ person</span></div>
+          <div class="course-card-note">4-hour class · Call or text to register</div>
+          <ul class="course-features">
+            <li><span class="check">✓</span> Adult, Child & Infant CPR techniques</li>
+            <li><span class="check">✓</span> AED operation and placement</li>
+            <li><span class="check">✓</span> Hands-on skills practice</li>
+            <li><span class="check">✓</span> Choking response — all ages</li>
+            <li><span class="check">✓</span> Taught by experienced instructors</li>
+          </ul>
+          <a href="tel:6028921962" class="btn-primary">📞 Call to Register</a>
+        </div>
+      </div>
+
+      <!-- Card 2: First Aid + CPR combo -->
+      <div class="course-card">
+        <div class="course-card-header" style="background: linear-gradient(135deg, #0c2147, #1a3a70);">
+          <div class="course-icon" style="background: var(--white); color: var(--navy); font-size:1.3rem;">❤️‍🩹</div>
+          <div class="course-card-title">First Aid / CPR Combined</div>
+          <div class="course-card-sub">MOST COMPREHENSIVE OPTION</div>
+        </div>
+        <div class="course-card-body">
+          <div class="course-card-price">$100 <span>/ person</span></div>
+          <div class="course-card-note">8-hour class · Flexible split available · Call to register</div>
+          <ul class="course-features">
+            <li><span class="check">✓</span> Everything in the CPR/AED course</li>
+            <li><span class="check">✓</span> Bleeding control & wound care</li>
+            <li><span class="check">✓</span> Shock recognition & response</li>
+            <li><span class="check">✓</span> Burns, fractures & sprains</li>
+            <li><span class="check">✓</span> Stroke & heart attack recognition</li>
+          </ul>
+          <a href="tel:6028921962" class="btn-primary">📞 Call to Register</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Flexible scheduling note -->
+    <div class="flexible-note">
+      <span class="flexible-note-icon">📅</span>
+      <div>
+        <strong style="color:#fff; font-size:0.95rem;">Need to split the First Aid / CPR class?</strong><br>
+        We understand life gets busy. The 8-hour combined class can be broken into two separate 4-hour sessions to fit your schedule. Just mention it when you call — we'll make it work.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section" id="why-us">
+  <div class="section-inner">
+    <div class="section-label">Why 1 AZ First Response</div>
+    <h2 class="section-title">Prepared People<br>Save Lives</h2>
+    <p class="section-subtitle">We bring genuine expertise and a passion for community safety to every class we teach.</p>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <span class="why-icon">🎓</span>
+        <div class="why-title">Expert Instructors</div>
+        <p class="why-text">Our instructors are trained and experienced — they bring real-world knowledge to every class, not just textbook answers.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">💰</span>
+        <div class="why-title">Accessible Pricing</div>
+        <p class="why-text">Life-saving skills should be available to everyone. We offer quality training at a fair price — no one should be priced out of preparedness.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">🤝</span>
+        <div class="why-title">Genuine Care</div>
+        <p class="why-text">Every student matters. From the first call to the final skill check, you'll feel welcomed, respected, and supported throughout.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">📅</span>
+        <div class="why-title">Flexible Scheduling</div>
+        <p class="why-text">We can split the combined class into two sessions when needed. Call us and we'll find a schedule that works for you.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">🏠</span>
+        <div class="why-title">Community Focused</div>
+        <p class="why-text">We serve Arizona communities with the belief that a more prepared community is a safer one — for everyone.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">⚕️</span>
+        <div class="why-title">Real Skills, Real Impact</div>
+        <p class="why-text">Students leave our classes confident and capable — ready to act when it matters most. That is not small. That is everything.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / MISSION -->
+<section class="section about-section" id="about">
+  <div class="section-inner">
+    <div class="section-label">Our Mission</div>
+    <h2 class="section-title">We Exist to Equip<br>Our Community</h2>
+    <p class="section-subtitle">
+      1 AZ First Response is part of Creative Safety Solutions, LLC — an Arizona-based safety education company built on the belief that prepared people save lives.
+    </p>
+
+    <blockquote class="mission-quote">
+      "We exist to make quality safety education accessible to every person in our community — through expert instruction, genuine care, and a belief that prepared people save lives."
+    </blockquote>
+
+    <div class="values-row">
+      <div class="value-chip">
+        <span class="value-chip-icon">⭐</span>
+        <div class="value-chip-title">Integrity First</div>
+      </div>
+      <div class="value-chip">
+        <span class="value-chip-icon">📚</span>
+        <div class="value-chip-title">Ongoing Education</div>
+      </div>
+      <div class="value-chip">
+        <span class="value-chip-icon">🌟</span>
+        <div class="value-chip-title">Excellence Always</div>
+      </div>
+      <div class="value-chip">
+        <span class="value-chip-icon">🤗</span>
+        <div class="value-chip-title">Genuine Care</div>
+      </div>
+      <div class="value-chip">
+        <span class="value-chip-icon">🔥</span>
+        <div class="value-chip-title">Inspire a Spark</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / REGISTER -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get Registered</div>
+    <h2 class="section-title">Ready to Get<br>Certified?</h2>
+    <p class="section-subtitle">Registration is simple — just give us a call or text. Our team will get you signed up and answer any questions you have.</p>
+
+    <div class="contact-layout">
+
+      <div class="contact-info-card">
+        <h3>Call or Text to Register</h3>
+        <p>Our team is ready to help you find the right class and schedule. One quick call is all it takes to get started.</p>
+
+        <a href="tel:6028921962" class="contact-phone">
+          <div class="phone-icon-wrap">📞</div>
+          <div>
+            <span class="phone-number">602-892-1962</span>
+            <span class="phone-sub">Call or Text · 1 AZ First Response</span>
+          </div>
+        </a>
+
+        <hr class="contact-divider">
+
+        <div class="contact-detail">
+          <span class="contact-detail-icon">🌐</span>
+          <span>1azfirstresponse.com</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📍</span>
+          <span>Serving Arizona communities</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">⏰</span>
+          <span>Flexible scheduling available — ask us</span>
+        </div>
+
+        <hr class="contact-divider">
+
+        <div style="font-size:0.82rem; color:rgba(255,255,255,0.4); line-height:1.6;">
+          Also find us at our sister company:<br>
+          <a href="https://139aztss.com" target="_blank" style="color:var(--gold); text-decoration:none;">$139 AZ Discount TSS</a> — Traffic Survival School
+        </div>
+      </div>
+
+      <div class="register-panel">
+        <h3>How to Register</h3>
+        <p>We keep registration simple. No forms, no waiting — just a quick conversation to get you enrolled in the right class.</p>
+
+        <ol class="register-steps">
+          <li>
+            <div class="step-num">1</div>
+            <div><strong>Choose your course</strong> — CPR/AED only ($50 · 4 hrs) or the full First Aid/CPR combo ($100 · 8 hrs)</div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div><strong>Call or text 602-892-1962</strong> — let us know which class you're interested in and how many people</div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div><strong>Pick your schedule</strong> — need to split the 8-hour class into two sessions? Just ask!</div>
+          </li>
+          <li>
+            <div class="step-num">4</div>
+            <div><strong>Show up ready to learn</strong> — our instructors will take care of the rest</div>
+          </li>
+        </ol>
+
+        <a href="tel:6028921962" class="btn-primary" style="width:100%; justify-content:center; font-size:1.05rem; padding:16px;">
+          📞 Call 602-892-1962 Now
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">1 AZ First Response</div>
+  <div class="footer-tagline">Prepared People Save Lives</div>
+  <div class="footer-links">
+    <a href="#courses">Courses</a>
+    <a href="#why-us">Why Us</a>
+    <a href="#about">About</a>
+    <a href="tel:6028921962">602-892-1962</a>
+    <a href="https://139aztss.com" target="_blank">$139 AZ Discount TSS</a>
+  </div>
+  <div class="footer-copy">
+    © 2026 Creative Safety Solutions, LLC · 1azfirstresponse.com · All Rights Reserved
+  </div>
+</footer>
+
+</body>
+</html>
