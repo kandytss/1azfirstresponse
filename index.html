@@ -509,6 +509,22 @@
     font-size: 0.95rem;
   }
 
+
+  /* group pricing table */
+  .pricing-block { margin-top: 40px; background: var(--white); border-radius: 12px; box-shadow: 0 4px 24px rgba(12,33,71,0.08); padding: 28px; }
+  .pricing-title { font-size: 1.3rem; color: var(--navy); margin-bottom: 16px; }
+  .pricing-title span { font-size: 0.9rem; color: var(--gray); font-weight: 400; }
+  .pricing-scroll { overflow-x: auto; }
+  .pricing-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 520px; }
+  .pricing-table th { background: var(--navy); color: var(--white); text-align: center; padding: 10px 12px; font-weight: 600; line-height: 1.25; }
+  .pricing-table th:first-child, .pricing-table td:first-child { text-align: left; }
+  .pricing-table th small { font-weight: 400; color: var(--gold-light); }
+  .pricing-table td { padding: 11px 12px; text-align: center; border-bottom: 1px solid var(--gray-light); color: var(--navy); font-variant-numeric: tabular-nums; }
+  .pricing-table tbody tr:nth-child(even) td { background: var(--off-white); }
+  .pricing-table td:last-child { color: #2e7d32; font-weight: 600; }
+  .pricing-notes { margin: 18px 0 0 18px; color: var(--gray); font-size: 0.9rem; line-height: 1.6; display: grid; gap: 4px; }
+  .contact-phone + .contact-phone { margin-top: 12px; }
+
   /* flexible option callout */
   .flexible-note {
     margin-top: 24px;
@@ -833,6 +849,7 @@
     .contact-layout { grid-template-columns: 1fr; gap: 28px; }
     .contact-info-card, .register-panel { padding: 28px; }
     .hero-cross-big { display: none; }
+    .pricing-block { padding: 20px 16px; }
   }
 </style>
 </head>
@@ -900,7 +917,7 @@
             <span class="course-detail-item">📍 Arizona</span>
           </div>
           <div class="course-price">$100</div>
-          <div class="course-note">Can split into two 4-hour sessions — call us</div>
+          <div class="course-note">Both classes · save $30 · can split into two 4-hour sessions</div>
         </div>
 
         <div class="course-item">
@@ -909,12 +926,22 @@
             <span class="course-detail-item">⏱ 4 Hours</span>
             <span class="course-detail-item">📍 Arizona</span>
           </div>
-          <div class="course-price">$50</div>
+          <div class="course-price">$65</div>
           <div class="course-note">Adult, Child & Infant CPR + AED use</div>
         </div>
 
-        <a href="tel:6028921962" class="btn-primary" style="width:100%; justify-content:center; margin-top:20px;">
-          📞 602-892-1962
+        <div class="course-item">
+          <div class="course-title">First Aid Only</div>
+          <div class="course-details">
+            <span class="course-detail-item">⏱ 4 Hours</span>
+            <span class="course-detail-item">📍 Arizona</span>
+          </div>
+          <div class="course-price">$65</div>
+          <div class="course-note">Bleeding, shock, burns, fractures & more</div>
+        </div>
+
+        <a href="tel:6029059999" class="btn-primary" style="width:100%; justify-content:center; margin-top:20px;">
+          📞 602-905-9999
         </a>
       </div>
     </div>
@@ -947,8 +974,8 @@
           <div class="course-card-sub">CORE LIFE SAFETY SKILLS</div>
         </div>
         <div class="course-card-body">
-          <div class="course-card-price">$50 <span>/ person</span></div>
-          <div class="course-card-note">4-hour class · Call or text to register</div>
+          <div class="course-card-price">$65 <span>/ person</span></div>
+          <div class="course-card-note">4-hour class · Call to register</div>
           <ul class="course-features">
             <li><span class="check">✓</span> Adult, Child & Infant CPR techniques</li>
             <li><span class="check">✓</span> AED operation and placement</li>
@@ -956,11 +983,32 @@
             <li><span class="check">✓</span> Choking response — all ages</li>
             <li><span class="check">✓</span> Taught by experienced instructors</li>
           </ul>
-          <a href="tel:6028921962" class="btn-primary">📞 Call to Register</a>
+          <a href="tel:6029059999" class="btn-primary">📞 Call to Register</a>
         </div>
       </div>
 
-      <!-- Card 2: First Aid + CPR combo -->
+      <!-- Card 2: First Aid -->
+      <div class="course-card">
+        <div class="course-card-header">
+          <div class="course-icon">🩹</div>
+          <div class="course-card-title">First Aid</div>
+          <div class="course-card-sub">INJURY & EMERGENCY CARE</div>
+        </div>
+        <div class="course-card-body">
+          <div class="course-card-price">$65 <span>/ person</span></div>
+          <div class="course-card-note">4-hour class · Call to register</div>
+          <ul class="course-features">
+            <li><span class="check">✓</span> Bleeding control & wound care</li>
+            <li><span class="check">✓</span> Shock recognition & response</li>
+            <li><span class="check">✓</span> Burns, fractures & sprains</li>
+            <li><span class="check">✓</span> Stroke & heart attack recognition</li>
+            <li><span class="check">✓</span> Taught by experienced instructors</li>
+          </ul>
+          <a href="tel:6029059999" class="btn-primary">📞 Call to Register</a>
+        </div>
+      </div>
+
+      <!-- Card 3: First Aid + CPR combo -->
       <div class="course-card">
         <div class="course-card-header" style="background: linear-gradient(135deg, #0c2147, #1a3a70);">
           <div class="course-icon" style="background: var(--white); color: var(--navy); font-size:1.3rem;">❤️‍🩹</div>
@@ -969,15 +1017,16 @@
         </div>
         <div class="course-card-body">
           <div class="course-card-price">$100 <span>/ person</span></div>
-          <div class="course-card-note">8-hour class · Flexible split available · Call to register</div>
+          <div class="course-card-note">8-hour class · Save $30 vs. separately · Flexible split available</div>
           <ul class="course-features">
             <li><span class="check">✓</span> Everything in the CPR/AED course</li>
+            <li><span class="check">✓</span> Everything in the First Aid course</li>
             <li><span class="check">✓</span> Bleeding control & wound care</li>
             <li><span class="check">✓</span> Shock recognition & response</li>
             <li><span class="check">✓</span> Burns, fractures & sprains</li>
             <li><span class="check">✓</span> Stroke & heart attack recognition</li>
           </ul>
-          <a href="tel:6028921962" class="btn-primary">📞 Call to Register</a>
+          <a href="tel:6029059999" class="btn-primary">📞 Call to Register</a>
         </div>
       </div>
 
@@ -990,6 +1039,31 @@
         <strong style="color:#fff; font-size:0.95rem;">Need to split the First Aid / CPR class?</strong><br>
         We understand life gets busy. The 8-hour combined class can be broken into two separate 4-hour sessions to fit your schedule. Just mention it when you call — we'll make it work.
       </div>
+    </div>
+
+    <!-- Group pricing -->
+    <div class="pricing-block" id="pricing">
+      <h3 class="pricing-title">Class pricing <span>(per person)</span></h3>
+      <div class="pricing-scroll">
+        <table class="pricing-table">
+          <thead>
+            <tr><th>Customer type</th><th>CPR/AED<br><small>4 hr</small></th><th>First Aid<br><small>4 hr</small></th><th>Both<br><small>8 hr</small></th><th>You save<br><small>with Both</small></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Individuals</td><td>$65</td><td>$65</td><td>$100</td><td>$30</td></tr>
+            <tr><td>Companies, 6–9 people</td><td>$75</td><td>$75</td><td>$110</td><td>$40</td></tr>
+            <tr><td>Companies, 10–19 people</td><td>$65</td><td>$65</td><td>$100</td><td>$30</td></tr>
+            <tr><td>Companies, 20+ people</td><td>$60</td><td>$60</td><td>$95</td><td>$25</td></tr>
+            <tr><td>Community groups (8+)</td><td>$55</td><td>$55</td><td>$85</td><td>$25</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="pricing-notes">
+        <li>All prices include the National Safety Council workbook and e-certificate.</li>
+        <li><strong>Everyone pays the workbook cost ($32.91) before class.</strong> Groups are billed on the final headcount 7 days before class.</li>
+        <li>Companies: 6-person minimum. Community groups: 8-person minimum, and the group provides the room.</li>
+        <li>$50 travel fee per class outside the West Valley.</li>
+      </ul>
     </div>
 
   </div>
@@ -1085,14 +1159,22 @@
     <div class="contact-layout">
 
       <div class="contact-info-card">
-        <h3>Call or Text to Register</h3>
+        <h3>Call to Register</h3>
         <p>Our team is ready to help you find the right class and schedule. One quick call is all it takes to get started.</p>
 
-        <a href="tel:6028921962" class="contact-phone">
+        <a href="tel:6029059999" class="contact-phone">
           <div class="phone-icon-wrap">📞</div>
           <div>
-            <span class="phone-number">602-892-1962</span>
-            <span class="phone-sub">Call or Text · 1 AZ First Response</span>
+            <span class="phone-number">602-905-9999</span>
+            <span class="phone-sub">Call or leave a message · 1 AZ First Response</span>
+          </div>
+        </a>
+
+        <a href="sms:4803090150" class="contact-phone">
+          <div class="phone-icon-wrap">💬</div>
+          <div>
+            <span class="phone-number">480-309-0150</span>
+            <span class="phone-sub">Call or text Kandy</span>
           </div>
         </a>
 
@@ -1126,11 +1208,11 @@
         <ol class="register-steps">
           <li>
             <div class="step-num">1</div>
-            <div><strong>Choose your course</strong> — CPR/AED only ($50 · 4 hrs) or the full First Aid/CPR combo ($100 · 8 hrs)</div>
+            <div><strong>Choose your course</strong> — CPR/AED ($65 · 4 hrs), First Aid ($65 · 4 hrs), or both ($100 · 8 hrs). Group rates are in the pricing table above.</div>
           </li>
           <li>
             <div class="step-num">2</div>
-            <div><strong>Call or text 602-892-1962</strong> — let us know which class you're interested in and how many people</div>
+            <div><strong>Call 602-905-9999</strong> (or call/text Kandy at 480-309-0150) — let us know which class you're interested in and how many people</div>
           </li>
           <li>
             <div class="step-num">3</div>
@@ -1142,8 +1224,8 @@
           </li>
         </ol>
 
-        <a href="tel:6028921962" class="btn-primary" style="width:100%; justify-content:center; font-size:1.05rem; padding:16px;">
-          📞 Call 602-892-1962 Now
+        <a href="tel:6029059999" class="btn-primary" style="width:100%; justify-content:center; font-size:1.05rem; padding:16px;">
+          📞 Call 602-905-9999 Now
         </a>
       </div>
 
@@ -1159,7 +1241,7 @@
     <a href="#courses">Courses</a>
     <a href="#why-us">Why Us</a>
     <a href="#about">About</a>
-    <a href="tel:6028921962">602-892-1962</a>
+    <a href="tel:6029059999">602-905-9999</a>
     <a href="https://139aztss.com" target="_blank">$139 AZ Discount TSS</a>
   </div>
   <div class="footer-copy">
